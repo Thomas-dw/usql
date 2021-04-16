@@ -3,7 +3,7 @@
 set -e
 
 SRC=$(realpath $(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd))
-TAGS="most sqlite_app_armor sqlite_fts5 sqlite_introspect sqlite_json1 sqlite_stat4 sqlite_userauth sqlite_vtable"
+TAGS="vertica"
 VER=$(git tag -l v* $SRC|grep -E '^v[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?$'|sort -r -V|head -1||:)
 BUILD=$SRC/build
 
@@ -29,7 +29,7 @@ case $PLATFORM in
     BIN=$BIN.exe
   ;;
   linux|darwin)
-    TAGS="$TAGS sqlite_icu no_adodb"
+    TAGS="$TAGS"
   ;;
 esac
 OUT=$DIR/$NAME-$VER-$PLATFORM-$ARCH.$EXT
