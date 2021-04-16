@@ -47,6 +47,7 @@ mkdir -p $DIR
 echo "BUILDING:    $BIN"
 go build \
   -tags "$TAGS" \
+  -ldflags="-extldflags=-static" \
   -o $BIN
 case $PLATFORM in
   linux|windows|darwin)
