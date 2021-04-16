@@ -47,7 +47,6 @@ mkdir -p $DIR
 echo "BUILDING:    $BIN"
 go build \
   -tags "$TAGS" \
-  -ldflags="-s -w -X github.com/xo/usql/text.CommandName=$NAME -X github.com/xo/usql/text.CommandVersion=$VER" \
   -o $BIN
 case $PLATFORM in
   linux|windows|darwin)
